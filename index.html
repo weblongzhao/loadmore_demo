@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+</head>
+<body>
+    <ul id="list">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    <button type="" id="btn">加载更多</button>
+</body>
+<script type="text/javascript">
+    var app = {
+        init:function(){
+            var app_this=this;
+            this.getdata(function(d){
+                 app_this.render(d);
+
+            });
+        },
+        getdata:function(callback){
+            var xhr = new XMLHttpRequest();
+            var listLilen = $$("#list li").length+1;
+            var url = `http://localhost:8888/loadmore?index=${listLilen}`
+            console.log(url)
+            xhr.open("get",url,true);
+            xhr.onload = function(){
+                callback(xhr.responseText)
+            }
+            xhr.send()
+        },
+        render:function(data){
+            var doc = document.createDocumentFragment();
+            for(var key in  JSON.parse(data)){
+                var li = document.createElement('li');
+                li.innerText = JSON.parse(data)[key];
+                doc.appendChild(li);
+            }
+
+            $("#list").appendChild(doc) ;
+        }
+     }
+    function $(selector){
+        return document.querySelector(selector) ;
+    }
+     function $$(selector){
+        return document.querySelectorAll(selector) ;
+    }
+
+    $('#btn').onclick = function(){
+       app.init()
+    }
+
+</script>
+</html>
