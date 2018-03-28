@@ -1,8 +1,10 @@
-<!DOCTYPE html>
+<!--添加 <!DOCTYPE html> 会加载不出来样式 报错信息如下
+Resource interpreted as Stylesheet but transferred with MIME type application/json-->
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
     <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="./css.css">
 </head>
 <body>
     <ul id="list">
@@ -12,7 +14,12 @@
         <li>4</li>
         <li>5</li>
     </ul>
-    <button type="" id="btn">加载更多</button>
+    <div class="btn">
+        <button type="" id="btn" >加载更多
+        </button>
+        <div class="typing_loader hidden"></div>
+    </div>
+
 </body>
 <script type="text/javascript">
     var app = {
@@ -31,6 +38,8 @@
             xhr.open("get",url,true);
             xhr.onload = function(){
                 app.flg=true;
+                $('.btn #btn').classList.remove("hidden") ;
+                $('.btn .typing_loader').classList.add("hidden") ;
                 callback(xhr.responseText)
             }
             xhr.send()
@@ -58,7 +67,10 @@
         console.log(app.flg)
         if(!app.flg) return ;
         app.flg=false;
+        $('.btn #btn').classList.add("hidden") ;
+        $('.btn .typing_loader').classList.remove("hidden") ;
         app.init()
+        console.log("加载完")
     }
 
 </script>

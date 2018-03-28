@@ -1,0 +1,88 @@
+/*
+* @Author: Marte
+* @Date:   2018-03-28 16:20:54
+* @Last Modified by:   Marte
+* @Last Modified time: 2018-03-28 16:35:14
+*/
+        /*Typing Loader*/
+
+.hidden{
+    display:none;
+}
+
+.btn {
+    width: 69px;
+    height: 24px;
+    background-color: #a0a0a0;
+    position: relative;
+}
+
+.typing_loader{
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    -webkit-animation: typing 1s linear infinite alternate;
+       -moz-animation: Typing 1s linear infinite alternate;
+            animation: typing 1s linear infinite alternate;
+    position: absolute;
+    left: 50%;
+    margin-left: -15px;
+    top: 8px;
+}
+#btn {
+    position:relative;
+     background-color: #a0a0a0;
+     border:none;
+     outline:none;
+}
+@-webkit-keyframes typing{
+    0%{
+        background-color: rgba(255,255,255, 1);
+        box-shadow: 12px 0px 0px 0px rgba(255,255,255,0.2),
+                    24px 0px 0px 0px rgba(255,255,255,0.2);
+      }
+    25%{
+        background-color: rgba(255,255,255, 0.4);
+        box-shadow: 12px 0px 0px 0px rgba(255,255,255,2),
+                    24px 0px 0px 0px rgba(255,255,255,0.2);
+    }
+    75%{ background-color: rgba(255,255,255, 0.4);
+        box-shadow: 12px 0px 0px 0px rgba(255,255,255,0.2),
+                    24px 0px 0px 0px rgba(255,255,255,1);
+      }
+}
+
+@-moz-keyframes typing{
+   0%{
+        background-color: rgba(255,255,255, 1);
+        box-shadow: 12px 0px 0px 0px rgba(255,255,255,0.2),
+                    24px 0px 0px 0px rgba(255,255,255,0.2);
+      }
+    25%{
+        background-color: rgba(255,255,255, 0.4);
+        box-shadow: 12px 0px 0px 0px rgba(255,255,255,2),
+                    24px 0px 0px 0px rgba(255,255,255,0.2);
+    }
+    75%{ background-color: rgba(255,255,255, 0.4);
+        box-shadow: 12px 0px 0px 0px rgba(255,255,255,0.2),
+                    24px 0px 0px 0px rgba(255,255,255,1);
+      }
+}
+
+@keyframes typing{
+   0%{
+        background-color: rgba(255,255,255, 1);
+        box-shadow: 12px 0px 0px 0px rgba(255,255,255,0.2),
+                    24px 0px 0px 0px rgba(255,255,255,0.2);
+      }
+    25%{
+        background-color: rgba(255,255,255, 0.4);
+        box-shadow: 12px 0px 0px 0px rgba(255,255,255,2),
+                    24px 0px 0px 0px rgba(255,255,255,0.2);
+    }
+    75%{ background-color: rgba(255,255,255, 0.4);
+        box-shadow: 12px 0px 0px 0px rgba(255,255,255,0.2),
+                    24px 0px 0px 0px rgba(255,255,255,1);
+      }
+}
+

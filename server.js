@@ -2,7 +2,7 @@
 * @Author: Marte
 * @Date:   2018-03-28 09:04:59
 * @Last Modified by:   Marte
-* @Last Modified time: 2018-03-28 15:01:52
+* @Last Modified time: 2018-03-28 16:31:26
 */
 
 'use strict';
@@ -33,7 +33,6 @@ http.createServer((request,response)=>{
         var statusDir = path.join(__dirname,urlObj.pathname);
         console.log(statusDir)
         fs.readFile(statusDir,function(err,data){
-            response.setHeader("content-type","text/html")
             response.end(data)
         })
     }
