@@ -30,6 +30,7 @@
             console.log(url)
             xhr.open("get",url,true);
             xhr.onload = function(){
+                app.flg=true;
                 callback(xhr.responseText)
             }
             xhr.send()
@@ -43,7 +44,8 @@
             }
 
             $("#list").appendChild(doc) ;
-        }
+        },
+        flg:true
      }
     function $(selector){
         return document.querySelector(selector) ;
@@ -53,7 +55,10 @@
     }
 
     $('#btn').onclick = function(){
-       app.init()
+        console.log(app.flg)
+        if(!app.flg) return ;
+        app.flg=false;
+        app.init()
     }
 
 </script>

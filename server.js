@@ -2,7 +2,7 @@
 * @Author: Marte
 * @Date:   2018-03-28 09:04:59
 * @Last Modified by:   Marte
-* @Last Modified time: 2018-03-28 13:56:01
+* @Last Modified time: 2018-03-28 15:01:52
 */
 
 'use strict';
@@ -26,8 +26,9 @@ http.createServer((request,response)=>{
         for(var i=0;i<5;i++){
             arr.push(urlObj.query.index++);
         }
+        setTimeout(function(){response.end(JSON.stringify(arr))},2000)
 
-        response.end(JSON.stringify(arr))
+
     } else{
         var statusDir = path.join(__dirname,urlObj.pathname);
         console.log(statusDir)
